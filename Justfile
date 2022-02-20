@@ -91,7 +91,7 @@ benchmark-report: setup-python
     
 # releases
 ci-build-python-extention:
-    cd connectorx-python && cargo build --release
+    cd connectorx-python && cargo build --release --target aarch64-apple-darwin
     ls target/release
     cd connectorx-python && poetry run python ../scripts/python-helper.py copy-extension
 
