@@ -134,7 +134,7 @@ jobs:
   #         path: connectorx-python/dist/*.whl
 
   darwin:
-    runs-on: macos-10.15
+    runs-on: macos-latest
     strategy:
       matrix:
         python-version: ["3.9"]
