@@ -133,6 +133,9 @@ jobs:
   #         name: "windows-${{ matrix.python-version }}"
   #         path: connectorx-python/dist/*.whl
 
+  ## openssl cross compilation issues
+  # https://stackoverflow.com/questions/67637414/how-do-i-cross-compile-openssl-libraries-on-mac-os-by-rust
+
   darwin:
     runs-on: macos-latest
     strategy:
@@ -177,6 +180,10 @@ jobs:
           pip install poetry
           cargo install cargo-quickinstall
           cargo quickinstall just
+
+      - name: Check rust tree
+        run: |
+          crate tree --target=aarch64-apple-darwin -i openssl-sys
 
       - name: Setup project
         run: |
