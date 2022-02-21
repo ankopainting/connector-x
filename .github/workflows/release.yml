@@ -183,7 +183,7 @@ jobs:
 
       - name: Check rust tree
         run: |
-          crate tree --target=aarch64-apple-darwin -i openssl-sys
+          cargo tree --target=aarch64-apple-darwin -i openssl-sys
 
       - name: Setup project
         run: |
